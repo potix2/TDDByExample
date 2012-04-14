@@ -1,5 +1,6 @@
 import Money.Dollar;
 import Money.Franc;
+import Money.Money;
 import org.junit.*;
 
 import static junit.framework.Assert.assertEquals;
@@ -9,9 +10,9 @@ import static junit.framework.Assert.assertTrue;
 public class MoneyTest {
     @Test
     public void testMultiplication() {
-        Dollar five = new Dollar(5);
-        assertEquals(new Dollar(10), five.times(2));
-        assertEquals(new Dollar(15), five.times(3));
+        Money five = Money.dollar(5);
+        assertEquals(Money.dollar(10), five.times(2));
+        assertEquals(Money.dollar(15), five.times(3));
     }
 
     @Test
@@ -25,8 +26,8 @@ public class MoneyTest {
 
     @Test
     public void testFrancMultiplication() {
-        Franc five = new Franc(5);
-        assertEquals(new Franc(10), five.times(2));
-        assertEquals(new Franc(15), five.times(3));
+        Money five = Money.franc(5);
+        assertEquals(Money.franc(10), five.times(2));
+        assertEquals(Money.franc(15), five.times(3));
     }
 }
