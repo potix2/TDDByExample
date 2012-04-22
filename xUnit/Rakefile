@@ -1,0 +1,7 @@
+require 'rubygems'
+require 'rake'
+
+task :default do
+  $:.unshift File.dirname(__FILE__) + '/lib'
+  load File.join(File.dirname(__FILE__), 'test', 'test_case_test.rb')
+end
