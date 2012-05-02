@@ -11,6 +11,10 @@ class TestCase
   def run
     setUp
     send(@name)
+    tearDown
+  end
+
+  def tearDown
   end
 
   def assert(predicate)
