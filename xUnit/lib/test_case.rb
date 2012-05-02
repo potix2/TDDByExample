@@ -1,3 +1,4 @@
+require 'test_result'
 class TestCase
   attr_accessor :name
 
@@ -9,9 +10,14 @@ class TestCase
   end
 
   def run
+    result = TestResult.new
+    result.testStarted
+
     setUp
     send(@name)
     tearDown
+    
+    result
   end
 
   def tearDown
