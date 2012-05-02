@@ -9,20 +9,15 @@ class TestCase
   def setUp
   end
 
-  def run
-    result = TestResult.new
+  def run(result)
     result.testStarted
-
     setUp
-
     begin
       send(@name)
     rescue
       result.testFailed
     end
     tearDown
-    
-    result
   end
 
   def tearDown
