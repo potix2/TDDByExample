@@ -14,7 +14,12 @@ class TestCase
     result.testStarted
 
     setUp
-    send(@name)
+
+    begin
+      send(@name)
+    rescue
+      result.testFailed
+    end
     tearDown
     
     result
